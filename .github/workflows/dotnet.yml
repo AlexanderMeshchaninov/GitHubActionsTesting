@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.402
     - name: Restore dependencies
-      run: dotnet restore GitHubActionsTesting/JustForTesting/JustForTesting.sln
+      run: dotnet restore JustForTesting/JustForTesting.sln
     - name: Build
-      run: dotnet build --no-restore GitHubActionsTesting/JustForTesting/JustForTesting.sln
+      run: dotnet build --no-restore JustForTesting/JustForTesting.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal GitHubActionsTesting/JustForTesting/JustForTesting.sln
+      run: dotnet test --no-build --verbosity normal JustForTesting/JustForTesting.sln
